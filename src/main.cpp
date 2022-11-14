@@ -1,23 +1,48 @@
 #include <iostream>
 #include "car.h"
 #include "warehouse.h"
+
 using namespace std;
 
 int main()
 {
 
     //Initialization
-    Warehouse Wh(10);
-    //Race_car RC(10,6,60, 6, "blue", 200);   //Enter:    (Value , Capacity , power, number , colour, top speed)
-    Car car(10,6,60, 643, "blue");            //Enter:    (Value , Capacity , power, number , colour)
+    Warehouse warehouse(10);
+    //Race_car race_car(10,6,60, 6, "blue", 200);   //Enter:    (Value , Capacity , power, number , colour, top speed)
+    Car car1(10,  6, 60, 123, "blue");                //Enter:    (Value , Capacity , power, number , colour)
+    Car car2(7,  4, 66, 234, "green");
+    Car car3(8,  5, 30, 345, "blue");
 
-    //actions
-    Wh.parking();
-    Wh.leaving(0);    //Enter Index / Parkingslot-Number
 
-    //std::cout << "\nNumber of Cars in the Warehouse: " << Wh.numbCars() << std::endl;
-    //std::cout << "\nWarehouse's capacity: " << Wh.Capacity() << std::endl;
+    /*Car car[] =
+    {
+        Car(10, 6, 60, 244, "blue"),
+        Car(10, 6, 60, 337, "blue"),
+        Car(10, 6, 60, 444, "blue")
+    };
 
+    //actions*/
+
+
+    warehouse.parking(car1);
+
+
+    //warehouse.leaving(20);    //Enter Index / Parkingslot-Number
+
+
+
+    //std::cout << "\nNumber of Cars in the Warehouse: " << warehouse.numbCars() << std::endl;
+    //std::cout << "\nWarehouse's capacity: " << warehouse.Capacity() << std::endl;
+
+
+
+    /*for(int i = 0; i<3; i++)
+    {
+        std::cout << "Car N." << i << ":" << car[i].GetNumber() << std::endl;
+    }
+    */
+    warehouse.returnCars();
 
     return 0;
 }
