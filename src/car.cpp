@@ -7,11 +7,11 @@ Car::Car()
 
 Car::Car(int value, int capacity,int power, int number, std::string color)
 {
-    this->value               = value;
-    this->capacity            = capacity;
-    this->power               = power;
-    this->number              = number;
-    this->color              = color;
+    mValue               = value;
+    mCapacity            = capacity;
+    mPower               = power;
+    mNumber              = number;
+    mColor              = color;
 
     //std::cout << "Car informations:\nValue: $" << value << "\nCapacity: " << capacity << "\nPower: " << power << "\nNumber: " << number <<
     //             "\nColour: " << clr << std::endl;
@@ -21,29 +21,28 @@ Car::Car(int value, int capacity,int power, int number, std::string color)
 //GetValues for the car
 int Car::GetNumber()
 {
-    return number;
+    return mNumber;
 }
 
 int Car::GetValue()
 {
-    return value;
+    return mValue;
 }
 
 int Car::GetCapacity()
 {
-    return capacity;
+    return mCapacity;
 }
 
 int Car::GetPower()
 {
-    return power;
+    return mPower;
 }
 
 std::string Car::GetColor()
 {
-    return color;
+    return mColor;
 }
-
 
 
 Race_car::Race_car(int value, int capacity,int power, int number, std::string color, int top_speed): Car(value, capacity, power, number, color)

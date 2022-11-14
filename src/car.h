@@ -5,9 +5,10 @@
 class Car{
 
 private:
-    int value, capacity, power, number;
-    std::string color;
+    int mValue, mCapacity, mPower, mNumber;
+    std::string mColor;
 public:
+    int value;
     //Contructor-Function
     Car();
     Car(int value, int capacity,int power, int number, std::string color);

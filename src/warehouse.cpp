@@ -1,6 +1,6 @@
 #include "warehouse.h"
 
-#include "bits/stdc++.h"
+
 
 //CONSTRUCTOR¨
 Warehouse::Warehouse(int capacity)
@@ -16,16 +16,14 @@ Warehouse::Warehouse(int capacity)
 // your method
 void Warehouse::parking(Car car)
 {
-    index = cnt_Car;
+    if(cnt_Car <= mCapacity)
+    {
+        Storage[cnt_Car] = car;
 
- //   Car_Number          = car.GetNumber();
- //   number_car[cnt_Car] = car.GetNumber();
+        std::cout << "\ncar N." << Storage[cnt_Car].GetNumber() << " is parked!" << std::endl;
 
-    Storage[cnt_Car] = car;
-
-    cnt_Car++;
-
-    //std::cout << "\ncar N." << Car_Number << " is parked!" << std::endl;
+        cnt_Car++;
+    }
 }
 
 /**
@@ -64,29 +62,43 @@ int Warehouse::numbCars()
 
 int Warehouse::Capacity()
 {
-    return mcapacity;
+    return mCapacity;
 }
 
-int Warehouse::sortNumber()
+void Warehouse::sortCars()
 {
-    int n = sizeof(number_car) / sizeof(number_car[0]);
+    int i, j;
+    for (i = 0; i < cnt_Car - 1; i++)
+    {
 
-    std::sort(number_car, number_car + n);                  //Sort function
-
-    return n;
-
+        // Last i elements are already in place
+        for (j = 0; j < cnt_Car - i - 1; j++)
+        {
+            if (Storage[j].GetNumber() > Storage[j + 1].GetNumber())
+            {
+                std::swap(Storage[j], Storage[j + 1]);
+            }
+        }
+    }
 }
 int Warehouse::returnCars()
 {
-  /*  int n = sortNumber();
 
-    std::cout << "\ncarnumber in the warehouse: ";
+    sortCars();
 
-    for (int i = 0; i < n; ++i)
-        if(number_car[i] >=1)
-        {
-            std::cout << number_car[i] << " ";
-        }*/
+    std::cout << "\nReturned Cars: " << std::endl << "Brand\tCar N. \tValue: \tHP: \tCapacity \tRegistration Number \tColour \tTop Speed" << std::endl;
+    for (int i = 0; i <3; i++)
+    {
+        std::cout << "Car." << i+1 <<
+                     ":\t"  << Storage[i].GetNumber()   <<
+                     "\t"   << Storage[i].GetValue()    <<
+                     "\t"   << Storage[i].GetPower()    <<
+                     "\t"   << Storage[i].GetCapacity() <<
+                     "\t"   << Storage[i].GetNumber()   <<
+                     "\t\t" << Storage[i].GetColor()    <<
+                     "\t"   << std::endl;
+    }
+
 
     return 0;
 }

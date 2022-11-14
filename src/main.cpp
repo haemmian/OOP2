@@ -25,7 +25,10 @@ int main()
     //actions*/
 
 
+
+    warehouse.parking(car2);
     warehouse.parking(car1);
+    warehouse.parking(car3);
 
 
     //warehouse.leaving(20);    //Enter Index / Parkingslot-Number
@@ -42,7 +45,7 @@ int main()
         std::cout << "Car N." << i << ":" << car[i].GetNumber() << std::endl;
     }
     */
-    warehouse.returnCars();
+   warehouse.returnCars();
 
     return 0;
 }
