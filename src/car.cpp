@@ -4,14 +4,15 @@ Car::Car()
 {
 
 }
-
-Car::Car(int value, int capacity,int power, int number, std::string color)
+///////////////////
+Car::Car(int value, int capacity,int power, int number, std::string color, std::string brand)
 {
-    this->value               = value;
-    this->capacity            = capacity;
-    this->power               = power;
-    this->number              = number;
-    this->color              = color;
+    mValue               = value;
+    mCapacity            = capacity;
+    mPower               = power;
+    mNumber              = number;
+    mColor               = color;
+    mBrand               = brand;
 
     //std::cout << "Car informations:\nValue: $" << value << "\nCapacity: " << capacity << "\nPower: " << power << "\nNumber: " << number <<
     //             "\nColour: " << clr << std::endl;
@@ -21,35 +22,60 @@ Car::Car(int value, int capacity,int power, int number, std::string color)
 //GetValues for the car
 int Car::GetNumber()
 {
-    return number;
+    return mNumber;
 }
 
 int Car::GetValue()
 {
-    return value;
+    return mValue;
 }
 
 int Car::GetCapacity()
 {
-    return capacity;
+    return mCapacity;
 }
 
 int Car::GetPower()
 {
-    return power;
+    return mPower;
+}
+
+int Car::GetTop_Speed()
+{
+    Race_car x;
+    return x.GetTopSpeed();
+
 }
 
 std::string Car::GetColor()
 {
-    return color;
+    return mColor;
+}
+
+std::string Car::GetBrand()
+{
+    return mBrand;
 }
 
 
+////////////////////////////////////////////////////////////
 
-Race_car::Race_car(int value, int capacity,int power, int number, std::string color, int top_speed): Car(value, capacity, power, number, color)
+Race_car::Race_car()
+{
+
+}
+
+Race_car::Race_car(int value, int capacity,int power, int number, std::string color, int top_speed, std::string brand): Car(value, capacity, power, number, color, brand)
 {
 
     mTop_speed = top_speed;
 
     //std::cout << "Top speed: " << top_speed << "km/h" << std::endl;
 }
+
+int Race_car::GetTopSpeed()
+{
+    return mTop_speed;
+}
+
+
