@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include "car.h"
 #include "warehouse.h"
 
@@ -9,29 +9,22 @@ int main()
 
     //Initialization
     Warehouse warehouse(10);
-    //Race_car race_car(10,6,60, 6, "blue", 200);   //Enter:    (Value , Capacity , power, number , colour, top speed)
-    Car car1(10,  6, 60, 123, "blue");                //Enter:    (Value , Capacity , power, number , colour)
-    Car car2(7,  4, 66, 234, "green");
-    Car car3(8,  5, 30, 345, "blue");
 
+    Race_car Ferrari    (200'000, 2, 400, 111777, "red", 300, "Ferrari");      //Enter:    (Value , Capacity , power, number , colour, top speed, brand)
+    Car      BMW        (50'000, 5, 200, 445445, "black", "BMW");              //Enter:    (Value , Capacity , power, number , colour, brand)
+    Car      Audi        (45'000, 5, 180, 987654, "turquoise", "Audi" );        //Enter:    (Value , Capacity , power, number , colour, brand)
 
-    /*Car car[] =
-    {
-        Car(10, 6, 60, 244, "blue"),
-        Car(10, 6, 60, 337, "blue"),
-        Car(10, 6, 60, 444, "blue")
-    };
 
     //actions*/
 
 
 
-    warehouse.parking(car2);
-    warehouse.parking(car1);
-    warehouse.parking(car3);
+    warehouse.parking(BMW);
+    warehouse.parking(Audi);
+    warehouse.parking(Ferrari);
 
 
-    //warehouse.leaving(20);    //Enter Index / Parkingslot-Number
+    warehouse.leaving(2);    //Enter Index / Parkingslot-Number
 
 
 
@@ -45,7 +38,7 @@ int main()
         std::cout << "Car N." << i << ":" << car[i].GetNumber() << std::endl;
     }
     */
-   warehouse.returnCars();
+   //warehouse.returnCars();
 
     return 0;
 }
