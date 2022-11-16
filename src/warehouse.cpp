@@ -8,6 +8,7 @@ Warehouse::Warehouse(int capacity)
 {
 
     mCapacity = capacity;
+
     //std::cout<<  "Warehouse\nCapacity: " << capacity << std::endl;
 }
 
@@ -21,6 +22,7 @@ void Warehouse::parking(Race_car car)
     if(cnt_Car <= mCapacity)
     {
         Storage[cnt_Car] = car;
+
 
         std::cout << "\ncar N." << Storage[cnt_Car].GetNumber() << " is parked!" << std::endl;
 
@@ -91,7 +93,7 @@ int Warehouse::numbCars()
  */
 // your method
 
-int Warehouse::Capacity()
+int Warehouse::GetCapacity()
 {
     return mCapacity;
 }
@@ -112,6 +114,7 @@ void Warehouse::sortCars()
         }
     }
 }
+
 int Warehouse::returnCars()
 {
     Race_car Speed;

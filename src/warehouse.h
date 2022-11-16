@@ -13,8 +13,8 @@ class Warehouse
 private:
     int mCapacity, index, cnt_Car = 0, Car_Number; //index refers to parking slot
 
+    Car         Storage[MAX];
 
-    Car Storage[MAX];
 
 
     //Private Functions
@@ -31,7 +31,7 @@ public:
 
     void leaving(int index_out);
     int numbCars();
-    int Capacity();
+    int GetCapacity();
 
     int returnCars();
 

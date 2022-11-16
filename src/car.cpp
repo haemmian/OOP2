@@ -4,7 +4,7 @@ Car::Car()
 {
 
 }
-///////////////////
+
 Car::Car(int value, int capacity,int power, int number, std::string color, std::string brand)
 {
     mValue               = value;
@@ -17,7 +17,6 @@ Car::Car(int value, int capacity,int power, int number, std::string color, std::
     //std::cout << "Car informations:\nValue: $" << value << "\nCapacity: " << capacity << "\nPower: " << power << "\nNumber: " << number <<
     //             "\nColour: " << clr << std::endl;
 }
-
 
 //GetValues for the car
 int Car::GetNumber()
@@ -57,7 +56,6 @@ std::string Car::GetBrand()
     return mBrand;
 }
 
-
 ////////////////////////////////////////////////////////////
 
 Race_car::Race_car()
@@ -65,7 +63,7 @@ Race_car::Race_car()
 
 }
 
-Race_car::Race_car(int value, int capacity,int power, int number, std::string color, int top_speed, std::string brand): Car(value, capacity, power, number, color, brand)
+Race_car::Race_car(int value, int capacity,int power, int number, std::string color, std::string brand, int top_speed): Car(value, capacity, power, number, color, brand)
 {
 
     mTop_speed = top_speed;
@@ -76,6 +74,8 @@ Race_car::Race_car(int value, int capacity,int power, int number, std::string co
 int Race_car::GetTopSpeed()
 {
     return mTop_speed;
+
+
 }
 
 

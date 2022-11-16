@@ -10,7 +10,7 @@ int main()
     //Initialization
     Warehouse warehouse(10);
 
-    Race_car Ferrari    (200'000, 2, 400, 111777, "red", 300, "Ferrari");      //Enter:    (Value , Capacity , power, number , colour, top speed, brand)
+    Race_car Ferrari    (200'000, 2, 400, 111777, "red", "Ferrari", 300);      //Enter:    (Value , Capacity , power, number , colour, brand, top speed)
     Car      BMW        (50'000, 5, 200, 445445, "black", "BMW");              //Enter:    (Value , Capacity , power, number , colour, brand)
     Car      Audi        (45'000, 5, 180, 987654, "turquoise", "Audi" );        //Enter:    (Value , Capacity , power, number , colour, brand)
 
@@ -24,7 +24,7 @@ int main()
     warehouse.parking(Ferrari);
 
 
-    warehouse.leaving(2);    //Enter Index / Parkingslot-Number
+    //warehouse.leaving(2);    //Enter Index / Parkingslot-Number
 
 
 
@@ -38,7 +38,7 @@ int main()
         std::cout << "Car N." << i << ":" << car[i].GetNumber() << std::endl;
     }
     */
-   //warehouse.returnCars();
+   warehouse.returnCars();
 
     return 0;
 }

@@ -33,9 +33,10 @@ private:
 
 public:
     Race_car();
-    Race_car(int value, int capacity,int power, int number, std::string color, int top_speed, std::string brand);
+    Race_car(int value, int capacity,int power, int number, std::string color, std::string brand, int top_speed);
     int mTop_speed;
 
     int GetTopSpeed();
+
 };
 #endif // CAR_H
