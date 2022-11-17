@@ -1,6 +1,6 @@
- #include <iostream>
-#include "car.h"
 #include "warehouse.h"
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -15,7 +15,7 @@ int main()
     Car      Audi        (45'000, 5, 180, 987654, "turquoise", "Audi" );        //Enter:    (Value , Capacity , power, number , colour, brand)
 
 
-    //actions*/
+    //actions
 
 
 
@@ -32,13 +32,15 @@ int main()
     //std::cout << "\nWarehouse's capacity: " << warehouse.Capacity() << std::endl;
 
 
-
-    /*for(int i = 0; i<3; i++)
+/*
+    for(int i = 0; i<3; i++)
     {
-        std::cout << "Car N." << i << ":" << car[i].GetNumber() << std::endl;
+        std::cout << "Car N." << i << ":" << car[i].GetNumber() <<
+std::endl;
     }
-    */
+*/
    warehouse.returnCars();
+
 
     return 0;
 }

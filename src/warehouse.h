@@ -12,8 +12,9 @@ class Warehouse
 
 private:
     int mCapacity, index, cnt_Car = 0, Car_Number; //index refers to parking slot
+    int TopSpeed[MAX];
 
-    Car         Storage[MAX];
+    Car Storage[MAX];
 
 
 

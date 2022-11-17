@@ -21,6 +21,8 @@ void Warehouse::parking(Race_car car)
 {
     if(cnt_Car <= mCapacity)
     {
+
+        TopSpeed[cnt_Car] = car.GetTopSpeed();      //Saves the speed value in a array
         Storage[cnt_Car] = car;
 
 
@@ -34,6 +36,7 @@ void Warehouse::parking(Car car)
 {
     if(cnt_Car <= mCapacity)
     {
+        TopSpeed[cnt_Car] = 0;
         Storage[cnt_Car] = car;
 
         std::cout << "\ncar N." << Storage[cnt_Car].GetNumber() << " is parked!" << std::endl;
@@ -110,6 +113,7 @@ void Warehouse::sortCars()
             if (Storage[j].GetNumber() > Storage[j + 1].GetNumber())
             {
                 std::swap(Storage[j], Storage[j + 1]);
+                std::swap(TopSpeed[j], TopSpeed[j + 1]);    //swap the speed value to the correct car
             }
         }
     }
@@ -133,14 +137,14 @@ int Warehouse::returnCars()
                      "\t\t" << Storage[i].GetColor();
 
 
-        /*if(Speed.GetTopSpeed()>0)
+        if(TopSpeed[i] > 0)
                         {
-                            std::cout << "\t" << Speed.GetTopSpeed();
+                            std::cout << "\t" << TopSpeed[i];
                         }
-                     else
+        else
                         {
-                            std::cout << "-";
-                        }*/
+                            std::cout << "\t-";
+                        }
 
         std::cout << "\t"   << std::endl;
     }

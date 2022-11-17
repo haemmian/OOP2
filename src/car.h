@@ -30,11 +30,11 @@ class Race_car:public Car
 
 private:
 
-
+    int mTop_speed;
 public:
     Race_car();
     Race_car(int value, int capacity,int power, int number, std::string color, std::string brand, int top_speed);
-    int mTop_speed;
+
 
     int GetTopSpeed();
 

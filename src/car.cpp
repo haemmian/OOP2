@@ -41,8 +41,8 @@ int Car::GetPower()
 
 int Car::GetTop_Speed()
 {
-    Race_car x;
-    return x.GetTopSpeed();
+
+    return 0;
 
 }
 
