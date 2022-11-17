@@ -22,8 +22,10 @@ void Warehouse::parking(Race_car car)
     if(cnt_Car <= mCapacity)
     {
 
-        TopSpeed[cnt_Car] = car.GetTopSpeed();      //Saves the speed value in a array
-        Storage[cnt_Car] = car;
+
+        TopSpeed.push_back(car.GetTopSpeed());      //Saves the speed value in a vector
+        Storage.push_back(car);
+
 
 
         std::cout << "\ncar N." << Storage[cnt_Car].GetNumber() << " is parked!" << std::endl;
@@ -36,8 +38,8 @@ void Warehouse::parking(Car car)
 {
     if(cnt_Car <= mCapacity)
     {
-        TopSpeed[cnt_Car] = 0;
-        Storage[cnt_Car] = car;
+        TopSpeed.push_back(0);
+        Storage.push_back(car);
 
         std::cout << "\ncar N." << Storage[cnt_Car].GetNumber() << " is parked!" << std::endl;
 
@@ -54,23 +56,32 @@ void Warehouse::parking(Car car)
 
 void Warehouse::leaving(int Index_OUT)
 {
+    int ParkingSlotNumber = Index_OUT-1;
 
     if(cnt_Car>=1)
     {                                     //in case there are no cars in the building
 
 
-        std::cout<<"\nYou are able to use the car '" << Storage[Index_OUT-1].GetBrand() << "' at parking slot N." << Index_OUT << "!\n";
+        std::cout<<"\nYou are able to use the car '" << Storage[ParkingSlotNumber].GetBrand() << "' at parking slot N." << Index_OUT << "!\n";
 
 
         std::cout << "\nReturned Car: " << std::endl << "Brand \tValue: \tHP: \tCapacity \tRegistration Number \tColour \tTop Speed \t" << std::endl;
 
 
-        std::cout << Storage[Index_OUT-1].GetBrand()<<
-                                                       "\t$"  << Storage[Index_OUT-1].GetValue()    <<
-                                                       "\t"   << Storage[Index_OUT-1].GetPower()    <<
-                                                       "\t"   << Storage[Index_OUT-1].GetCapacity() <<
-                                                       "\t"   << Storage[Index_OUT-1].GetNumber()   <<
-                                                       "\t\t" << Storage[Index_OUT-1].GetColor();
+        std::cout << Storage[ParkingSlotNumber].GetBrand()<<
+                                                       "\t$"  << Storage[ParkingSlotNumber].GetValue()    <<
+                                                       "\t"   << Storage[ParkingSlotNumber].GetPower()    <<
+                                                       "\t"   << Storage[ParkingSlotNumber].GetCapacity() <<
+                                                       "\t"   << Storage[ParkingSlotNumber].GetNumber()   <<
+                                                       "\t\t" << Storage[ParkingSlotNumber].GetColor();
+        if(TopSpeed[ParkingSlotNumber] > 0)
+                        {
+                            std::cout << "\t" << TopSpeed[ParkingSlotNumber];
+                        }
+        else
+                        {
+                            std::cout << "\t-";
+                        }
 
 
         std::cout << "\t"   << std::endl;
@@ -103,6 +114,7 @@ int Warehouse::GetCapacity()
 
 void Warehouse::sortCars()
 {
+
     int i, j;
     for (i = 0; i < cnt_Car - 1; i++)
     {
