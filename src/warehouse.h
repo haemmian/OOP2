@@ -13,10 +13,8 @@ class Warehouse
 private:
     int mCapacity, index, cnt_Car = 0, Car_Number; //index refers to parking slot
     std::vector <int> TopSpeed;
-
     std::vector<Car> Storage;
-
-
+    std::vector<Car>::iterator ptr;
 
     //Private Functions
     void sortCars();
@@ -26,18 +24,20 @@ public:
 
 
     Warehouse(int capacity);
-
     void parking(Car car);
     void parking(Race_car car);
-
     void leaving(int index_out);
-    int numbCars();
+    int GetnumbCars();
     int GetCapacity();
-
     int returnCars();
-
 };
 
 
-#endif // WAREHOUSE_H
+/*class compare{
+public:
+        bool operator()(Car a, Car b);
 
+};*/
+
+
+#endif // WAREHOUSE_H

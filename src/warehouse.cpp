@@ -1,16 +1,9 @@
 #include "warehouse.h"
 
 
-
-
 //CONSTRUCTOR¨
 Warehouse::Warehouse(int capacity)
-{
-
-    mCapacity = capacity;
-
-    //std::cout<<  "Warehouse\nCapacity: " << capacity << std::endl;
-}
+    :mCapacity(capacity){}
 
 /**
  * @brief parks a car in the warehouse
@@ -58,6 +51,7 @@ void Warehouse::leaving(int Index_OUT)
 {
     int ParkingSlotNumber = Index_OUT-1;
 
+
     if(cnt_Car>=1)
     {                                     //in case there are no cars in the building
 
@@ -76,7 +70,7 @@ void Warehouse::leaving(int Index_OUT)
                                                        "\t\t" << Storage[ParkingSlotNumber].GetColor();
         if(TopSpeed[ParkingSlotNumber] > 0)
                         {
-                            std::cout << "\t" << TopSpeed[ParkingSlotNumber];
+                            std::cout << "\t" << TopSpeed[ParkingSlotNumber] << "km/h";
                         }
         else
                         {
@@ -87,6 +81,9 @@ void Warehouse::leaving(int Index_OUT)
         std::cout << "\t"   << std::endl;
 
         //  delete Storage[Index_OUT];
+        //Storage.erase(ptr);
+
+
         cnt_Car--;
     }
 }
@@ -96,7 +93,7 @@ void Warehouse::leaving(int Index_OUT)
  * @return number of cars in the warehouse
  */
 // your method
-int Warehouse::numbCars()
+int Warehouse::GetnumbCars()
 {
     return cnt_Car;
 }
@@ -151,7 +148,7 @@ int Warehouse::returnCars()
 
         if(TopSpeed[i] > 0)
                         {
-                            std::cout << "\t" << TopSpeed[i];
+                            std::cout << "\t" << TopSpeed[i] << "km/h";
                         }
         else
                         {

@@ -24,7 +24,7 @@ int main()
     warehouse.parking(Ferrari);
 
 
-    warehouse.leaving(2);    //Enter Index / Parkingslot-Number
+    warehouse.leaving(3);    //Enter Index / Parkingslot-Number
 
 
 
@@ -40,6 +40,7 @@ std::endl;
     }
 */
    //warehouse.returnCars();
+
 
 
     return 0;
