@@ -54,8 +54,9 @@ void Warehouse::leaving(int Index_OUT)
 
     if(cnt_Car>=1)
     {                                     //in case there are no cars in the building
+        std::vector<Car>::iterator ptr;
 
-
+        ptr = Storage.end();
         std::cout<<"\nYou are able to use the car '" << Storage[ParkingSlotNumber].GetBrand() << "' at parking slot N." << Index_OUT << "!\n";
 
 
@@ -63,25 +64,40 @@ void Warehouse::leaving(int Index_OUT)
 
 
         std::cout << Storage[ParkingSlotNumber].GetBrand()<<
-                                                       "\t$"  << Storage[ParkingSlotNumber].GetValue()    <<
-                                                       "\t"   << Storage[ParkingSlotNumber].GetPower()    <<
-                                                       "\t"   << Storage[ParkingSlotNumber].GetCapacity() <<
-                                                       "\t"   << Storage[ParkingSlotNumber].GetNumber()   <<
-                                                       "\t\t" << Storage[ParkingSlotNumber].GetColor();
+                     "\t$"  << Storage[ParkingSlotNumber].GetValue()    <<
+                     "\t"   << Storage[ParkingSlotNumber].GetPower()    <<
+                     "\t"   << Storage[ParkingSlotNumber].GetCapacity() <<
+                     "\t"   << Storage[ParkingSlotNumber].GetNumber()   <<
+                     "\t\t" << Storage[ParkingSlotNumber].GetColor();
         if(TopSpeed[ParkingSlotNumber] > 0)
-                        {
-                            std::cout << "\t" << TopSpeed[ParkingSlotNumber] << "km/h";
-                        }
+        {
+            std::cout << "\t" << TopSpeed[ParkingSlotNumber] << "km/h";
+        }
         else
-                        {
-                            std::cout << "\t-";
-                        }
+        {
+            std::cout << "\t-";
+        }
 
 
-        std::cout << "\t"   << std::endl;
+        std::cout << "\t\n"   << std::endl;
 
         //  delete Storage[Index_OUT];
-        //Storage.erase(ptr);
+
+
+
+
+        std::cout << "\nStorage Size: " <<Storage.size();
+        std::cout << "\nStorage Capacity: " <<Storage.capacity()<<" \n";
+
+        for(int i = 0; i < 3; i++){std::cout<< Storage[i].GetBrand() << std::endl;}
+
+        Storage.erase(Storage.begin()+2);
+
+        std::cout<< "\nafter erased:\n";
+        std::cout << "\nStorage Size: " <<Storage.size();
+        std::cout << "\nStorage Capacity: " <<Storage.capacity()<<" \n";
+
+        for(int i = 0; i < 3; i++){std::cout<< Storage[i].GetBrand() << std::endl;}
 
 
         cnt_Car--;
@@ -109,7 +125,7 @@ int Warehouse::GetCapacity()
     return mCapacity;
 }
 
-void Warehouse::sortCars()
+std::vector<Car>  Warehouse::sortCars(std::vector<Car> copiedStorage)
 {
 
     int i, j;
@@ -119,22 +135,23 @@ void Warehouse::sortCars()
         // Last i elements are already in place
         for (j = 0; j < cnt_Car - i - 1; j++)
         {
-            if (Storage[j].GetNumber() > Storage[j + 1].GetNumber())
+            if (copiedStorage[j].GetNumber() > copiedStorage[j + 1].GetNumber())
             {
-                std::swap(Storage[j], Storage[j + 1]);
+                std::swap(copiedStorage[j], copiedStorage[j + 1]);
                 std::swap(TopSpeed[j], TopSpeed[j + 1]);    //swap the speed value to the correct car
             }
         }
     }
+    return copiedStorage;
 }
 
-int Warehouse::returnCars()
+std::vector<Car> Warehouse::returnCars()
 {
-    Race_car Speed;
+    //Race_car &ptr = Storage[0];
 
 
-    sortCars();
 
+/*
     std::cout << "\nReturned Cars: " << std::endl << "Brand \tValue: \tHP: \tCapacity \tRegistration Number \tColour \tTop Speed \t" << std::endl;
     for (int i = 0; i <3; i++)
     {
@@ -147,17 +164,18 @@ int Warehouse::returnCars()
 
 
         if(TopSpeed[i] > 0)
-                        {
-                            std::cout << "\t" << TopSpeed[i] << "km/h";
-                        }
+        {
+            std::cout << "\t" << TopSpeed[i] << "km/h";
+        }
         else
-                        {
-                            std::cout << "\t-";
-                        }
+        {
+            std::cout << "\t-";
+        }
 
         std::cout << "\t"   << std::endl;
     }
+*/
+    return sortCars(Storage);
 
-
-    return 0;
+    //return sortedStorage;
 }

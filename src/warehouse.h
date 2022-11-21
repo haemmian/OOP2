@@ -3,6 +3,7 @@
 #include "car.h"
 #include <algorithm>
 #include <iostream>
+#include <vector>
 
 #define MAX 1000
 
@@ -11,17 +12,23 @@ class Warehouse
 {
 
 private:
-    int mCapacity, index, cnt_Car = 0, Car_Number; //index refers to parking slot
+    int mCapacity, cnt_Car = 0; //index refers to parking slot
+    Race_car a;
     std::vector <int> TopSpeed;
     std::vector<Car> Storage;
-    std::vector<Car>::iterator ptr;
+
+
+
+    Car *ptr = &a;
+
+    //Car *ptr;
 
     //Private Functions
-    void sortCars();
+    std::vector<Car> sortCars(std::vector<Car> copiedStorage);
+
 
 
 public:
-
 
     Warehouse(int capacity);
     void parking(Car car);
@@ -29,7 +36,8 @@ public:
     void leaving(int index_out);
     int GetnumbCars();
     int GetCapacity();
-    int returnCars();
+    std::vector<Car> returnCars();
+
 };
 
 
