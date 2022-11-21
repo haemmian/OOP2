@@ -18,33 +18,9 @@ int main()
 
     //actions
 
-
-
     warehouse.parking(BMW);
     warehouse.parking(Audi);
     warehouse.parking(Ferrari);
-
-
-    //warehouse.leaving(3);    //Enter Index / Parkingslot-Number
-
-/*
-    int arr[] = {1,2,3,4,5,6,7,8,9};
-
-    for (auto x : arr){
-        std::cout<< x << " ";
-    }
-
-*/
-    //std::cout << "\nNumber of Cars in the Warehouse: " << warehouse.numbCars() << std::endl;
-    //std::cout << "\nWarehouse's capacity: " << warehouse.Capacity() << std::endl;
-
-    /*
-    for(int i = 0; i<3; i++)
-    {
-        std::cout << "Car N." << i << ":" << car[i].GetNumber() <<
-std::endl;
-    }
-*/
 
 
     Output = warehouse.returnCars();
@@ -53,14 +29,14 @@ std::endl;
     for (auto car : Output)
     {
         std::cout <<car.GetBrand()<<
-                     "\t$"   <<car.GetValue()   <<
-                     "\t"   <<car.GetPower()    <<
-                     "\t"   <<car.GetCapacity() <<
-                     "\t"   <<car.GetNumber()   <<
-                     "\t\t" <<car.GetColor();
+                    "\t$"   <<car.GetValue()   <<
+                    "\t"   <<car.GetPower()    <<
+                    "\t"   <<car.GetCapacity() <<
+                    "\t"   <<car.GetNumber()   <<
+                    "\t\t" <<car.GetColor();
 
 
-/*
+        /*
         if(TopSpeed[i] > 0)
         {
             std::cout << "\t" << TopSpeed[i] << "km/h";

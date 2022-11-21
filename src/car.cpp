@@ -37,13 +37,6 @@ int Car::GetPower()
     return mPower;
 }
 
-int Car::GetTop_Speed()
-{
-
-    return 0;
-
-}
-
 std::string Car::GetColor()
 {
     return mColor;
@@ -68,8 +61,6 @@ Race_car::Race_car(int value, int capacity,int power, int number, std::string co
 int Race_car::GetTopSpeed()
 {
     return mTop_speed;
-
-
 }
 
 

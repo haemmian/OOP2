@@ -5,28 +5,17 @@
 #include <iostream>
 #include <vector>
 
-define MAX 1000
-
-
 class Warehouse
 {
 
 private:
-    int mCapacity, cnt_Car = 0; //index refers to parking slot
-    Race_car a;
-    std::vector <int> TopSpeed;
-    std::vector<Car> Storage;
+    int mCapacity, mCnt_Car = 0; //index refers to parking slot
 
-
-
-    Car *ptr = &a;
-
-    //Car *ptr;
+    std::vector <int> mTopSpeed;
+    std::vector<Car> mStorage;
 
     //Private Functions
     std::vector<Car> sortCars(std::vector<Car> copiedStorage);
-
-
 
 public:
 
@@ -39,13 +28,6 @@ public:
     std::vector<Car> returnCars();
 
 };
-
-
-/*class compare{
-public:
-        bool operator()(Car a, Car b);
-
-};*/
 
 
 #endif // WAREHOUSE_H
