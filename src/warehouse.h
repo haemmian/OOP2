@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 
-#define MAX 1000
+
 
 
 class Warehouse
