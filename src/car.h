@@ -11,16 +11,15 @@ private:
     std::string mColor, mBrand;
 
 public:
-
     //Contructor-Function
     Car();
     Car( int value, int capacity,int power, int number, std::string color, std::string brand);
-    int GetNumber();
-    int GetValue();
-    int GetCapacity();
-    int GetPower();
-    std::string GetColor();
-    std::string GetBrand();
+    int getNumber();
+    int getValue();
+    int getCapacity();
+    int getPower();
+    std::string getColor();
+    std::string getBrand();
 
 };
 //////////////////////////////////////////////////////////
@@ -35,7 +34,7 @@ public:
     Race_car(int value, int capacity,int power, int number, std::string color, std::string brand, int top_speed);
 
 
-    int GetTopSpeed();
+    int getTopSpeed();
 
 };
 #endif // CAR_H

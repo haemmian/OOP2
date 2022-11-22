@@ -17,14 +17,17 @@ private:
     //Private Functions
     std::vector<Car> sortCars(std::vector<Car> copiedStorage);
 
+
+
+
 public:
 
     Warehouse(int capacity);
     void parking(Car car);
     void parking(Race_car car);
     void leaving(int index_out);
-    int GetnumbCars();
-    int GetCapacity();
+    int getnumbCars();
+    int getCapacity();
     std::vector<Car> returnCars();
 
 };

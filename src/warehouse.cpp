@@ -15,10 +15,10 @@ void Warehouse::parking(Race_car car)
     if(mCnt_Car <= mCapacity)
     {
 
-        mTopSpeed.push_back(car.GetTopSpeed());      //Saves the speed value in a vector
+        mTopSpeed.push_back(car.getTopSpeed());      //Saves the speed value in a vector
         mStorage.push_back(car);
 
-        std::cout << "\ncar N." << mStorage[mCnt_Car].GetNumber() << " is parked!" << std::endl;
+        std::cout << "\ncar N." << mStorage[mCnt_Car].getNumber() << " is parked!" << std::endl;
 
         mCnt_Car++;
     }
@@ -31,7 +31,7 @@ void Warehouse::parking(Car car)
         mTopSpeed.push_back(0);
         mStorage.push_back(car);
 
-        std::cout << "\ncar N." << mStorage[mCnt_Car].GetNumber() << " is parked!" << std::endl;
+        std::cout << "\ncar N." << mStorage[mCnt_Car].getNumber() << " is parked!" << std::endl;
 
         mCnt_Car++;
     }
@@ -53,18 +53,18 @@ void Warehouse::leaving(int Index_OUT)
     {                                     //in case there are no cars in the building
 
 
-        std::cout<<"\nYou are able to use the car '" << mStorage[ParkingSlotNumber].GetBrand() << "' at parking slot N." << Index_OUT << "!\n";
+        std::cout<<"\nYou are able to use the car '" << mStorage[ParkingSlotNumber].getBrand() << "' at parking slot N." << Index_OUT << "!\n";
 
 
         std::cout << "\nReturned Car: " << std::endl << "Brand \tValue: \tHP: \tCapacity \tRegistration Number \tColour \tTop Speed \t" << std::endl;
 
 
-        std::cout << mStorage[ParkingSlotNumber].GetBrand()<<
-                     "\t$"  << mStorage[ParkingSlotNumber].GetValue()    <<
-                     "\t"   << mStorage[ParkingSlotNumber].GetPower()    <<
-                     "\t"   << mStorage[ParkingSlotNumber].GetCapacity() <<
-                     "\t"   << mStorage[ParkingSlotNumber].GetNumber()   <<
-                     "\t\t" << mStorage[ParkingSlotNumber].GetColor();
+        std::cout << mStorage[ParkingSlotNumber].getBrand()<<
+                     "\t$"  << mStorage[ParkingSlotNumber].getValue()    <<
+                     "\t"   << mStorage[ParkingSlotNumber].getPower()    <<
+                     "\t"   << mStorage[ParkingSlotNumber].getCapacity() <<
+                     "\t"   << mStorage[ParkingSlotNumber].getNumber()   <<
+                     "\t\t" << mStorage[ParkingSlotNumber].getColor();
         if(mTopSpeed[ParkingSlotNumber] > 0)
         {
             std::cout << "\t" << mTopSpeed[ParkingSlotNumber] << "km/h";
@@ -86,7 +86,7 @@ void Warehouse::leaving(int Index_OUT)
  * @return number of cars in the warehouse
  */
 // your method
-int Warehouse::GetnumbCars()
+int Warehouse::getnumbCars()
 {
     return mCnt_Car;
 }
@@ -97,7 +97,7 @@ int Warehouse::GetnumbCars()
  */
 // your method
 
-int Warehouse::GetCapacity()
+int Warehouse::getCapacity()
 {
     return mCapacity;
 }
@@ -112,7 +112,7 @@ std::vector<Car>  Warehouse::sortCars(std::vector<Car> copiedStorage)
         // Last i elements are already in place
         for (j = 0; j < mCnt_Car - i - 1; j++)
         {
-            if (copiedStorage[j].GetNumber() > copiedStorage[j + 1].GetNumber())
+            if (copiedStorage[j].getNumber() > copiedStorage[j + 1].getNumber())
             {
                 std::swap(copiedStorage[j], copiedStorage[j + 1]);
                 std::swap(mTopSpeed[j], mTopSpeed[j + 1]);    //swap the speed value to the correct car

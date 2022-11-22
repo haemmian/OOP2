@@ -28,12 +28,12 @@ int main()
     std::cout << "\nReturned Cars: " << std::endl << "Brand \tValue: \tHP: \tCapacity \tRegistration Number \tColour \tTop Speed \t" << std::endl;
     for (auto car : Output)
     {
-        std::cout <<car.GetBrand()<<
-                    "\t$"   <<car.GetValue()   <<
-                    "\t"   <<car.GetPower()    <<
-                    "\t"   <<car.GetCapacity() <<
-                    "\t"   <<car.GetNumber()   <<
-                    "\t\t" <<car.GetColor();
+        std::cout <<car.getBrand()<<
+                    "\t$"   <<car.getValue()   <<
+                    "\t"   <<car.getPower()    <<
+                    "\t"   <<car.getCapacity() <<
+                    "\t"   <<car.getNumber()   <<
+                    "\t\t" <<car.getColor();
 
 
         /*
