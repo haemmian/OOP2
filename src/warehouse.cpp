@@ -90,7 +90,7 @@ int Warehouse::getCapacity()
 
 std::vector<Car*> Warehouse::sortCars(std::vector<Car *> copiedStorage)
 {
-    compareConf cmp;
+    compareConfig cmp;
 
     std::sort(copiedStorage.begin(),copiedStorage.end(), cmp);
 
@@ -103,7 +103,7 @@ std::vector<Car*> Warehouse::returnCars()
 }
 
 ///////////////////
-bool compareConf::operator()(Car*&Ihs, Car*&rhs)
+bool compareConfig::operator()(Car*&Ihs, Car*&rhs)
 {
         return Ihs->getNumber() < rhs->getNumber();
 }

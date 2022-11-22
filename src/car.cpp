@@ -12,9 +12,7 @@ Car::Car(int value, int capacity,int power, int number, std::string color, std::
     , mNumber(number)
     , mTopSpeed(topSpeed)
     , mColor(color)
-    , mBrand(brand)
-
-{}
+    , mBrand(brand){}
 
 
 //getValues for the car

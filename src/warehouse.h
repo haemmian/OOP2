@@ -30,7 +30,7 @@ public:
 
 ///////////////////////////
 
-class compareConf
+class compareConfig
 {
 public:
      bool operator()(Car*&Ihs, Car*&rhs);

@@ -36,7 +36,6 @@ int main()
                     "\t\t" <<car->getColor();
 
 
-
         if(car->getTopSpeed() > 0)
         {
             std::cout << "\t" << car->getTopSpeed() << "km/h";
