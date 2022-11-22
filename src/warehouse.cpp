@@ -12,7 +12,6 @@ Warehouse::Warehouse(int capacity)
 // your method/*
 void Warehouse::parking(Car& car)
 {
-    //Car* ptr = car;
 
     if(mCnt_Car <= mCapacity)
     {
@@ -84,12 +83,10 @@ int Warehouse::getnumbCars()
  * @return warehouse's capacity
  */
 // your method
-
 int Warehouse::getCapacity()
 {
     return mCapacity;
 }
-
 
 std::vector<Car*> Warehouse::sortCars(std::vector<Car *> copiedStorage)
 {
@@ -100,11 +97,11 @@ std::vector<Car*> Warehouse::sortCars(std::vector<Car *> copiedStorage)
     return copiedStorage;
 }
 
-
 std::vector<Car*> Warehouse::returnCars()
 {
-    return sortCars(mStorage);
+    return sortCars(mStorage);          //delivers the copied Storage
 }
+
 ///////////////////
 bool compareConf::operator()(Car*&Ihs, Car*&rhs)
 {
