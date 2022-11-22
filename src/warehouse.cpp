@@ -102,27 +102,23 @@ int Warehouse::getCapacity()
     return mCapacity;
 }
 
-std::vector<Car *> Warehouse::sortCars(std::vector<Car *> copiedStorage)
+
+std::vector<Car*> Warehouse::sortCars(std::vector<Car *> copiedStorage)
 {
+    compareConf cmp;
 
-    int i, j;
-    for (i = 0; i < mCnt_Car - 1; i++)
-    {
+    std::sort(copiedStorage.begin(),copiedStorage.end(), cmp);
 
-        // Last i elements are already in place
-        for (j = 0; j < mCnt_Car - i - 1; j++)
-        {
-            if (copiedStorage[j]->getNumber() > copiedStorage[j + 1]->getNumber())
-            {
-                std::swap(copiedStorage[j], copiedStorage[j + 1]);
-
-            }
-        }
-    }
     return copiedStorage;
 }
+
 
 std::vector<Car*> Warehouse::returnCars()
 {
     return sortCars(mStorage);
+}
+///////////////////
+bool compareConf::operator()(Car*&Ihs, Car*&rhs)
+{
+        return Ihs->getNumber() < rhs->getNumber();
 }

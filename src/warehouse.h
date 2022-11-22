@@ -15,16 +15,17 @@ private:
 
 
 
-    std::vector <Car*> mStorage;
+
 
     //Private Functions
     std::vector<Car*> sortCars(std::vector<Car*> copiedStorage);
+    bool Compare(Car*, Car*);
 
 
 
 
 public:
-
+    std::vector <Car*> mStorage;
     Warehouse(int capacity);
     void parking(Car car);
     void parking(Race_car car);
@@ -35,5 +36,12 @@ public:
 
 };
 
+///////////////////////////
+
+class compareConf
+{
+public:
+     bool operator()(Car*&Ihs, Car*&rhs);
+};
 
 #endif // WAREHOUSE_H

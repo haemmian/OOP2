@@ -5,7 +5,6 @@ Car::Car()
 
 }
 
-
 Car::Car(int value, int capacity,int power, int number, std::string color, std::string brand, int topSpeed)
     : mValue(value)
     , mCapacity(capacity)
@@ -38,6 +37,7 @@ int Car::getPower()
 {
     return mPower;
 }
+
 int Car::getTopSpeed()
 {
     return mTopSpeed;
@@ -61,8 +61,7 @@ Race_car::Race_car()
 
 Race_car::Race_car(int value, int capacity, int power, int number, std::string color, std::string brand, int topSpeed)
     : Car(value, capacity, power, number, color, brand, topSpeed)
-    , mTop_speed(topSpeed)
-{}
+    , mTop_speed(topSpeed){}
 
 int Race_car::getTopSpeed()
 {
