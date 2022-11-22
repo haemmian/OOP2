@@ -5,17 +5,20 @@
 #include <iostream>
 #include <vector>
 
+
 class Warehouse
 {
 
 private:
     int mCapacity, mCnt_Car = 0; //index refers to parking slot
 
-    std::vector <int> mTopSpeed;
-    std::vector<Car> mStorage;
+
+
+
+    std::vector <Car*> mStorage;
 
     //Private Functions
-    std::vector<Car> sortCars(std::vector<Car> copiedStorage);
+    std::vector<Car*> sortCars(std::vector<Car*> copiedStorage);
 
 
 
@@ -28,7 +31,7 @@ public:
     void leaving(int index_out);
     int getnumbCars();
     int getCapacity();
-    std::vector<Car> returnCars();
+    std::vector<Car*> returnCars();
 
 };
 

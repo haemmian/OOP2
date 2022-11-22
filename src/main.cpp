@@ -14,7 +14,7 @@ int main()
     Car      BMW        (50'000, 5, 200, 445445, "black", "BMW");              //Enter:    (Value , Capacity , power, number , colour, brand)
     Car      Audi        (45'000, 5, 180, 987654, "turquoise", "Audi");        //Enter:    (Value , Capacity , power, number , colour, brand)
 
-    std::vector <Car> Output;
+    std::vector <Car*> Output;
 
     //actions
 
@@ -28,24 +28,24 @@ int main()
     std::cout << "\nReturned Cars: " << std::endl << "Brand \tValue: \tHP: \tCapacity \tRegistration Number \tColour \tTop Speed \t" << std::endl;
     for (auto car : Output)
     {
-        std::cout <<car.getBrand()<<
-                    "\t$"   <<car.getValue()   <<
-                    "\t"   <<car.getPower()    <<
-                    "\t"   <<car.getCapacity() <<
-                    "\t"   <<car.getNumber()   <<
-                    "\t\t" <<car.getColor();
+        std::cout <<car->getBrand()<<
+                    "\t$"  <<car->getValue()   <<
+                    "\t"   <<car->getPower()    <<
+                    "\t"   <<car->getCapacity() <<
+                    "\t"   <<car->getNumber()   <<
+                    "\t\t" <<car->getColor();
 
 
-        /*
-        if(TopSpeed[i] > 0)
+
+        if(car->getTopSpeed() > 0)
         {
-            std::cout << "\t" << TopSpeed[i] << "km/h";
+            std::cout << "\t" << car->getTopSpeed() << "km/h";
         }
         else
         {
             std::cout << "\t-";
         }
-*/
+
         std::cout << "\t"   << std::endl;
     }
 

@@ -6,18 +6,19 @@ class Car
 {
 
 private:
-    int mValue, mCapacity, mPower, mNumber;
+    int mValue, mCapacity, mPower, mNumber, mTopSpeed;
 
     std::string mColor, mBrand;
 
 public:
     //Contructor-Function
     Car();
-    Car( int value, int capacity,int power, int number, std::string color, std::string brand);
+    Car( int value, int capacity,int power, int number, std::string color, std::string brand, int topSpeed = 0);
     int getNumber();
     int getValue();
     int getCapacity();
     int getPower();
+    int getTopSpeed();
     std::string getColor();
     std::string getBrand();
 
@@ -31,7 +32,7 @@ private:
 
 public:
     Race_car();
-    Race_car(int value, int capacity,int power, int number, std::string color, std::string brand, int top_speed);
+    Race_car(int value, int capacity,int power, int number, std::string color, std::string brand, int topSpeed);
 
 
     int getTopSpeed();
