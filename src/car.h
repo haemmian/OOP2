@@ -34,7 +34,6 @@ public:
     Race_car();
     Race_car(int value, int capacity,int power, int number, std::string color, std::string brand, int topSpeed);
 
-
     int getTopSpeed();
 
 };

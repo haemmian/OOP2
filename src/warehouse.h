@@ -27,8 +27,8 @@ private:
 public:
     std::vector <Car*> mStorage;
     Warehouse(int capacity);
-    void parking(Car car);
-    void parking(Race_car car);
+    void parking(Car &);
+  //  void parking(Race_car);
     void leaving(int index_out);
     int getnumbCars();
     int getCapacity();

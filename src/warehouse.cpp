@@ -9,25 +9,13 @@ Warehouse::Warehouse(int capacity)
  * @brief parks a car in the warehouse
  * @param car to park
  */
-// your method
-void Warehouse::parking(Race_car car)
+// your method/*
+void Warehouse::parking(Car& car)
 {
+    //Car* ptr = car;
+
     if(mCnt_Car <= mCapacity)
     {
-
-        mStorage.push_back(&car);
-
-        std::cout << "\ncar N." << mStorage[mCnt_Car] -> getNumber() << " is parked!" << std::endl;
-
-        mCnt_Car++;
-    }
-}
-
-void Warehouse::parking(Car car)
-{
-    if(mCnt_Car <= mCapacity)
-    {
-
         mStorage.push_back(&car);
 
         std::cout << "\ncar N." << mStorage[mCnt_Car] -> getNumber() << " is parked!" << std::endl;
